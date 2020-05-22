@@ -1,8 +1,14 @@
+/*-----------------*\
+      $VARIABLES
+\*-----------------*/
 :root {
     --green: #6aa821;
     --black: rgb(15, 7, 7);
 }
 
+/*-----------------*\
+        $BASE
+\*-----------------*/
 * {
     box-sizing: border-box;
 }
@@ -38,6 +44,9 @@ img {
     width: 30%;
 }
 
+/*-----------------*\
+      $LAYOUT
+\*-----------------*/
 .wrapper {
     display: grid;
     grid-template-columns: 1fr;
@@ -55,6 +64,47 @@ img {
     padding: 50px 0 30px 0;
 }
 
+.main-grid {
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-template-rows: auto;
+    grid-template-areas:
+        "banner banner"
+        "article aside"
+        "line line"
+        "triangle triangle";
+}
+
+.banner {
+    grid-area: banner;
+}
+
+.body {
+    grid-area: article;
+    padding: 20px 40px 20px 0;
+}
+
+.aside {
+    grid-area: aside;
+    align-items: center;
+    margin-top: 20px;
+    padding: 0 25px;
+
+    background-color: var(--green);
+
+    color: #fff;
+}
+
+.footer {
+    grid-row: 3;
+    justify-content: space-between;
+    padding-bottom: 50px;
+}
+
+/*-----------------*\
+      $MODULE
+\*-----------------*/
 .header__icon {
     width: 150px;
     height: auto;
@@ -74,23 +124,8 @@ img {
     color: rgb(104, 104, 104);
 }
 
-.main {
-    grid-row: 2;
-}
-
-.grid {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    grid-template-rows: auto;
-    grid-template-areas:
-        "banner banner"
-        "article aside"
-        "line line"
-        "triangle triangle";
-}
-
-.banner {
-    grid-area: banner;
+.nav__bm{
+    display: none;
 }
 
 .banner__figure {
@@ -135,11 +170,6 @@ img {
     background-color: rgb(147, 243, 36);
 }
 
-.body {
-    grid-area: article;
-    padding: 20px 40px 20px 0;
-}
-
 .body__header {
     align-items: flex-end;
     padding-top: 20px;
@@ -155,17 +185,6 @@ img {
     padding-left: 10px;
 
     font-weight: 600;
-}
-
-.aside {
-    grid-area: aside;
-    align-items: center;
-    margin-top: 20px;
-    padding: 0 25px;
-
-    background-color: var(--green);
-    
-    color: #fff;
 }
 
 .aside__h2 {
@@ -193,7 +212,7 @@ img {
     align-self: flex-end;
 }
 
-.aside__link:hover{
+.aside__link:hover {
     padding: 2px;
 
     border: 1px solid white;
@@ -214,15 +233,9 @@ img {
     margin-left: auto;
     margin-right: auto;
 
-	border-left: 25px solid transparent;
-	border-right: 25px solid transparent;
-	border-top: 50px solid var(--green);
-}
-
-.footer {
-    grid-row: 3;
-    justify-content: space-between;
-    padding-bottom: 50px;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-top: 50px solid var(--green);
 }
 
 .form__input {
@@ -248,9 +261,9 @@ img {
     color: #fff;
 }
 
-.form__btn:hover{
+.form__btn:hover {
     background-color: rgb(155, 255, 88);
-   
+
     cursor: pointer;
 }
 
@@ -276,3 +289,11 @@ img {
     height: 50px;
     width: 130px;
 }
+
+/*-----------------*\
+     $RESPONSIVE
+\*-----------------*/
+@media all and (max-width: 1200px) {}
+@media all and (max-width: 992px) {}
+@media all and (max-width: 768px) {}
+@media all and (max-width: 576) {}
