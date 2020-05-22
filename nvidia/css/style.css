@@ -44,6 +44,10 @@ img {
     width: 30%;
 }
 
+.width-100 {
+    width: 100%;
+}
+
 /*-----------------*\
       $LAYOUT
 \*-----------------*/
@@ -51,8 +55,7 @@ img {
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 3fr;
-    width: 1500px;
-    min-width: 500px;
+    max-width: 1500px;
     margin-left: auto;
     margin-right: auto;
 }
@@ -124,8 +127,14 @@ img {
     color: rgb(104, 104, 104);
 }
 
-.nav__bm{
+.nav__btn {
     display: none;
+
+    border: none;
+
+    background-color: rgba(0, 0, 0, 0);
+
+    font-size: 30px;
 }
 
 .banner__figure {
@@ -293,7 +302,100 @@ img {
 /*-----------------*\
      $RESPONSIVE
 \*-----------------*/
-@media all and (max-width: 1200px) {}
-@media all and (max-width: 992px) {}
-@media all and (max-width: 768px) {}
-@media all and (max-width: 576) {}
+@media all and (max-width: 1200px) {
+    .wrapper {
+        width: 1150px;
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+@media all and (max-width: 1025px) {
+    .wrapper {
+        width: 992px;
+    }
+
+    .main-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .body {
+        padding-right: 0;
+    }
+
+    .aside {
+        padding-bottom: 10px;
+    }
+
+    .footer {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .header__icon-link {
+        display: none;
+    }
+
+    .nav__btn {
+        display: block;
+        margin-left: auto;
+    }
+
+    .nav__btn:hover{
+        cursor: pointer;
+    }
+}
+
+@media all and (max-width: 768px) {
+    .wrapper {
+        width: 738px;
+    }
+}
+
+@media all and (max-width: 576px) {
+    body {
+        font-size: 12px;
+    }
+
+    img {
+        width: 70px;
+        height: 70px;
+    }
+
+    .wrapper {
+        width: 556px;
+        margin-left: 5px;
+    }
+
+    .footer {
+        align-items: flex-start;
+    }
+
+    .banner__btn {
+        padding: 2px;
+    }
+
+    .body__h2 {
+        font-size: 14px;
+    }
+
+    .form__input {
+        width: 230px;
+    }
+
+}
+
+@media all and (max-width: 365px) {
+    .wrapper {
+        width: 339px;
+    }
+}
