@@ -17,7 +17,7 @@ body {
 a {
     color: var(--black);
     text-decoration: none;
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 700;
 }
 
@@ -117,7 +117,6 @@ img {
 
 .banner__text {
     color: #fff;
-    font-size: 18px;
     font-weight: 700;
 }
 
@@ -165,6 +164,7 @@ img {
     padding: 0 25px;
 
     background-color: var(--green);
+    
     color: #fff;
 }
 
@@ -193,6 +193,13 @@ img {
     align-self: flex-end;
 }
 
+.aside__link:hover{
+    padding: 2px;
+
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
 .main__green-line {
     grid-area: line;
     height: 8px;
@@ -218,7 +225,34 @@ img {
     padding-bottom: 50px;
 }
 
-.form__input
+.form__input {
+    padding: 10px;
+    margin: 5px;
+
+    border-radius: 0em;
+    border: 1px solid rgb(133, 133, 133);
+}
+
+.form__btn {
+    width: 100px;
+    height: 35px;
+    align-self: flex-end;
+    margin-left: 10px;
+    margin-bottom: 5px;
+
+    border-radius: none;
+    border: none;
+
+    background-color: var(--green);
+
+    color: #fff;
+}
+
+.form__btn:hover{
+    background-color: rgb(155, 255, 88);
+   
+    cursor: pointer;
+}
 
 .gallery__container {
     justify-content: space-between;
@@ -227,4 +261,18 @@ img {
 .gallery__img:hover {
     opacity: 0.5;
     cursor: pointer;
+}
+
+.partenaires__container {
+    justify-content: space-between;
+    align-items: center;
+}
+
+.partenaires__img--larger {
+    width: 150px;
+}
+
+.partenaires__img--smaller {
+    height: 50px;
+    width: 130px;
 }
