@@ -83,9 +83,62 @@ th:not([align]) {
   text-align: left;
 }
 
+a {
+  text-decoration: none;
+  color: black;
+}
+
 html,
 body {
-  font-size: 14px;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+img {
+  width: 30%;
+  height: auto;
+}
+
+h2 {
+  font-size: 3.125rem;
+  font-weight: 800;
+  letter-spacing: 5px;
+}
+
+h3 {
+  font-size: 1.875rem;
+  font-weight: 800;
+}
+
+.flex, .flex--column {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.flex--column {
+  flex-direction: column;
+  align-items: center;
+}
+
+body {
+  display: grid;
+  grid-template-rows: 30% 40% 30%;
+}
+
+.header {
+  grid-row: 1/2;
+}
+
+.main {
+  grid-row: 2/3;
+}
+
+.footer {
+  grid-row: 3/4;
+}
+
+.header__img {
+  width: 6.25rem;
 }
 
 /*# sourceMappingURL=style.css.map */

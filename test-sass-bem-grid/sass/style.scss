@@ -4,10 +4,59 @@
 @import "libs/functions.scss";
 @import "libs/responsive.scss";
 
-$base-font-size: 14px;
-
 //Usual staff
 html,
 body {
     font-size: $base-font-size;
+    font-family: "Montserrat", sans-serif;
+}
+
+img {
+    width: 30%;
+    height: auto;
+}
+
+h2 {
+    font-size: rem(50);
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+h3 {
+    font-size: rem(30);
+    font-weight: 800;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flex--column {
+    @extend .flex ;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 30% 40% 30%;
+}
+
+$sections: header, main, footer;
+$first: 1;
+$second: 2;
+
+@each $section in $sections {
+    .#{$section} {
+        grid-row: #{$first} / #{$second};
+
+    }
+
+    $first: $first+1;
+    $second: $second+1;
+}
+
+.header__img {
+    width: rem(100);
 }
