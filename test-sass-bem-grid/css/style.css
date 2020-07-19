@@ -154,7 +154,7 @@ body {
 }
 
 .container {
-  height: 380.89px;
+  height: auto;
   overflow: hidden;
 }
 .container .container__img {
