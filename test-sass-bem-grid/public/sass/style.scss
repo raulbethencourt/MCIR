@@ -1,0 +1,88 @@
+/* My files */
+@import "libs/reset.scss";
+@import "libs/mixins.scss";
+@import "libs/functions.scss";
+@import "libs/responsive.scss";
+
+//Usual staff
+html,
+body {
+    font-size: $base-font-size;
+    font-family: "Montserrat", sans-serif;
+}
+
+img {
+    width: 30%;
+    height: auto;
+}
+
+h2 {
+    font-size: rem(50);
+    font-weight: 800;
+    letter-spacing: 5px;
+}
+
+h3 {
+    font-size: rem(30);
+    font-weight: 800;
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.flex--column {
+    @extend .flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+body {
+    display: grid;
+    grid-template-rows: 25% 40% 30%;
+}
+
+$sections: header, main, footer;
+$first: 1;
+$second: 2;
+
+@each $section in $sections {
+    .#{$section} {
+        grid-row: #{$first} / #{$second};
+
+    }
+
+    $first: $first+1;
+    $second: $second+1;
+}
+
+.header {
+    height: 350px;
+
+    .header__img {
+        width: rem(100);
+        padding-bottom: 0;
+    }
+
+    .header__title {
+        padding-top: 0;
+    }
+}
+
+
+
+.feed-top__img {
+    width: 90%;
+    height: auto;
+}
+
+.container {
+    height: 380.89px;
+    overflow: hidden;
+
+    .container__img {
+        width: 100%;
+        display: block;
+    }
+}
