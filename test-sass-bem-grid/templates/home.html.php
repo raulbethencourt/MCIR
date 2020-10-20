@@ -12,7 +12,8 @@
     <title>My client is rich</title>
 </head>
 <body>
-<?php /*content*/ ?>
+
+<?php foreach () ?>
 
 </body>
 </html>
