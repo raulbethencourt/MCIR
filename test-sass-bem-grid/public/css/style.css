@@ -1,0 +1,178 @@
+/* My files */
+/*! minireset.css v0.0.6 | MIT License | github.com/jgthms/minireset.css */
+html,
+body,
+p,
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+blockquote,
+figure,
+fieldset,
+legend,
+textarea,
+pre,
+iframe,
+hr,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img,
+video {
+  height: auto;
+  max-width: 100%;
+}
+
+iframe {
+  border: 0;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+td:not([align]),
+th:not([align]) {
+  text-align: left;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+html,
+body {
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 300px 1500px 150px;
+}
+
+.container__header {
+  grid-column: 1/span 1;
+  grid-row: 1/span 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container__header .header__img {
+  max-width: 5rem;
+}
+.container__header h1 {
+  font-size: 3rem;
+}
+
+.container__main {
+  grid-column: 1/span 1;
+  grid-row: 2/span 1;
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 2fr 1fr 2fr;
+}
+.container__main .main__realisations {
+  grid-column: 1/span 3;
+  grid-row: 1/span 1;
+  display: flex;
+  justify-content: space-evenly;
+}
+.container__main .main__realisations .realisations__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+.container__main .main__group {
+  grid-column: 1/span 3;
+  grid-row: 2/span 1;
+}
+.container__main .main__group .group__figure {
+  width: 100%;
+  height: 100%;
+  background-image: url("../images/04.jpg");
+}
+.container__main .main__valeurs {
+  grid-column: 1/span 3;
+  grid-row: 3/span 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.container__main .main__valeurs .valeurs__container {
+  display: flex;
+  justify-content: space-evenly;
+}
+.container__main .main__valeurs .valeurs__container--5 {
+  max-width: 30%;
+  max-height: 80%;
+  margin-top: 10%;
+  background-image: url("../images/05.jpg");
+  background-size: 500px auto;
+  color: white;
+}
+.container__main .main__valeurs .valeurs__container--6 {
+  max-width: 30%;
+  max-height: 80%;
+  margin-top: 10%;
+  background-image: url("../images/06.jpg");
+  background-size: 500px auto;
+  color: white;
+}
+.container__main .main__valeurs .valeurs__container--7 {
+  max-width: 30%;
+  max-height: 80%;
+  margin-top: 10%;
+  background-image: url("../images/07.jpg");
+  background-size: 500px auto;
+  color: white;
+}
+
+.container__footer {
+  grid-column: 1/span 1;
+  grid-row: 3/span 1;
+  display: flex;
+}
+
+/*# sourceMappingURL=style.css.map */

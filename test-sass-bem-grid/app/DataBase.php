@@ -14,7 +14,7 @@ class DataBase
 
     private function getPDO()
     {
-        if (!is_null($this->pdo)) {
+        if ($this->pdo === null) {
             $pdo = new PDO('mysql:dbname='.$this->db_name.';host='.$this->db_host, $this->db_user,
                 $this->db_password,);
             $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -26,7 +26,6 @@ class DataBase
     public function query($statement)
     {
         $q = $this->getPDO()->query($statement);
-        $q->setFetchMode(PDO::FETCH_COLUMN);
-        return $q->fetch();
+        return $q->fetchAll(PDO::FETCH_ASSOC);
     }
 }
