@@ -1,0 +1,14 @@
+/* My files */
+@import "libs/reset.scss";
+@import "libs/mixins.scss";
+@import "libs/functions.scss";
+@import "libs/responsive.scss";
+
+$base-font-size: 16px;
+
+//Usual staff
+html,
+body {
+    font-size: $base-font-size;
+    font-family: 'Roboto', sans-serif;
+}
