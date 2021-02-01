@@ -6,9 +6,101 @@
 
 $base-font-size: 16px;
 
-//Usual staff
 html,
 body {
-    font-size: $base-font-size;
-    font-family: 'Roboto', sans-serif;
+	font-size: $base-font-size;
+	font-family: "Roboto", sans-serif;
+}
+
+.container {
+	display: grid;
+	grid-template-columns: auto;
+	grid-template-rows: auto auto auto;
+
+	.container__header {
+		grid-row: 1 / span 1;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: space-around;
+		height: 250px;
+
+		.header__img {
+			width: 90px;
+			height: auto;
+		}
+
+		.header__title {
+			font-size: 2.3rem;
+			font-weight: 800;
+			text-transform: uppercase;
+			letter-spacing: 5px;
+		}
+	}
+
+	.container__main {
+		grid-row: 2 / span 1;
+		display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+
+		.main__section-top {
+            grid-row: 1 / span 1;
+            display: flex;
+            justify-content: space-evenly;
+
+            .section-top__container {
+                flex: none;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 31%;
+
+                @for $i from 1 to 4 {
+                    .container__img--#{$i} {
+                        width: 100%;
+                        height: 250px;
+                        background-image: url("../../public/images/0#{$i}.jpg");
+
+                        @if #{$i} == 2 {
+                            background-size: cover;
+                        } @else {
+                            background-size: contain;
+                        }
+                    }
+
+                    .container__title {
+                        margin: 15px 0;
+
+                        font-size: 1.5rem;
+                        font-weight: 700;
+                    }
+
+                    .container__text {
+                        width: 80%;
+
+                        text-align: center;
+                    }
+
+                    .container__link {
+                        margin-top: 15px;
+
+                        font-weight: 600;
+                        color: black;
+                    }
+                }
+            }
+		}
+
+		.main__section-middle {
+			grid-row: 2 / span 1;
+		}
+
+		.main__section-bottom {
+			grid-row: 3 / span 1;
+		}
+	}
+
+	.container__footer {
+		grid-row: 3 / span 1;
+	}
 }
