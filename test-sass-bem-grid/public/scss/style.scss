@@ -29,6 +29,12 @@ body {
 		text-transform: uppercase;
 		letter-spacing: 5px;
 	}
+
+	@media #{$small-down} {
+		.header__title {
+			font-size: 2rem;
+		}
+	}
 }
 
 .main {
@@ -58,6 +64,7 @@ body {
 
 					font-size: 1.5rem;
 					font-weight: 700;
+					text-align: center;
 				}
 
 				.container__text {
@@ -164,6 +171,58 @@ body {
 						width: 80%;
 
 						text-align: center;
+					}
+				}
+			}
+		}
+	}
+
+	@media #{$small-down} {
+		.main__section-top {
+			flex-direction: column;
+			align-items: center;
+
+			.section-top__container {
+				width: 90%;
+
+				.container__link {
+					margin-bottom: 50px;
+				}
+			}
+		}
+
+		.main__section-middle {
+			justify-content: center;
+
+			.section-middle__container {
+				width: 90%;
+				margin-right: 0px;
+
+				text-align: center;
+
+				.container__title {
+					font-size: 2rem;
+				}
+			}
+		}
+
+		.main__section-bottom {
+			.section-bottom__title {
+				margin-bottom: 0px;
+
+				font-size: 2rem;
+			}
+
+			.section-bottom__container {
+				flex-direction: column;
+				align-items: center;
+
+				@for $i from 5 through 7 {
+					.container__block--#{$i} {
+						width: 90%;
+						margin: 20px 0;
+						padding-top: 50%;
+						padding-bottom: 10%;
 					}
 				}
 			}
