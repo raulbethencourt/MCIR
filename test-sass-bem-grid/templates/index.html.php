@@ -7,6 +7,9 @@ $db = new DataBase();
 $categories = ["realisations", "groupe", "valeurs"];
 $result = [];
 
+/**
+ * get the data from db
+ */
 foreach ($categories as $category) {
     $result[] = $db->query(
         "SELECT * 
@@ -31,57 +34,61 @@ foreach ($categories as $category) {
 </head>
 
 <body>
-    <div class="container">
-        <header class="container__header">
-            <img src="../public/images/logo_mcir.png" alt="logo" class="header__img">
-            <h1 class="header__title">nos réalisations</h1>
-        </header>
+    <header class="header">
+        <img src="../public/images/logo_mcir.png" alt="logo" class="header__img">
+        <h1 class="header__title">nos réalisations</h1>
+    </header>
 
-        <main class="container__main">
-            <section class="main__section-top">
-                <?php
-                foreach ($result[0] as $text) {
-                    echo '<div class="section-top__container">';
-                    echo    '<div class="container__img--' . $text['id'] . '"></div>';
-                    echo    '<h2 class="container__title">' . $text["titre"] . '</h2>';
-                    echo    '<p class="container__text">' . $text["description"] . '</p>';
-                    echo    '<a href="' . $text['url'] . '"  class="container__link">en savoir plus</a>';
-                    echo '</div>';
-                };
-                ?>
-            </section>
+    <main class="main">
+        <section class="main__section-top">
+            <?php
+            foreach ($result[0] as $text) {
+                $number = substr($text['image_url'], -5, 1);
+                echo '<div class="section-top__container">';
+                echo    '<div class="container__img--' . $number . '"></div>';
+                echo    '<h2 class="container__title">' . $text["titre"] . '</h2>';
+                echo    '<p class="container__text">' . $text["description"] . '</p>';
+                echo    '<a href="' . $text['url'] . '"  class="container__link">en savoir plus</a>';
+                echo '</div>';
+            };
+            ?>
+        </section>
 
-            <section class="main__section-middle">
-                <h2 class="section-middle__title">nos valeurs</h2>
-                <?php
-                foreach ($result[1] as $text) {
-                    echo '<div class="section-middle__container">';
-                    echo    '<h2 class="container__title">' . $text["titre"] . '</h2>';
-                    echo    '<p class="container__text">' . $text["description"] . '</p>';
-                    echo '</div>';
-                };
-                ?>
-            </section>
+        <section class="main__section-middle">
+            <?php
+            $text = $result[1][0]["description"];
+            $textResult = explode("Donec", $text, 2);
+            echo '<div class="section-middle__container">';
+            echo    '<h2 class="container__title">' . $result[1][0]["titre"] . '</h2>';
+            echo    '<p class="container__text">' . $textResult[0] . '</p>';
+            echo    '<p class="container__text">Donec ' . $textResult[1] . '</p>';
+            echo '</div>';
+            ?>
+        </section>
 
-            <section class="main__section-bottom">
+        <section class="main__section-bottom">
+            <h2 class="section-bottom__title">nos valeurs</h2>
+            <div class="section-bottom__container">
                 <?php
                 foreach ($result[2] as $text) {
-                    echo '<div class="section-bottom__container">';
-                    echo    '<div class="container__img"></div>';
-                    echo    '<h2 class="container__title">' . $text["titre"] . '</h2>';
-                    echo    '<p class="container__text">' . $text["description"] . '</p>';
+                    $number = substr($text['image_url'], -5, 1);
+                    echo '<div class="container__block--' . $number . '">';
+                    echo    '<h2 class="block__title">' . $text["titre"] . '</h2>';
+                    echo    '<p class="block__text">' . $text["description"] . '</p>';
                     echo '</div>';
                 };
                 ?>
-            </section>
-        </main>
+            </div>
+        </section>
+    </main>
 
-        <footer class="container__footer">>
-            <i class="fab fa-facebook-f"></i>
-            <i class="fab fa-twitter"></i>
-            <i class="fab fa-instagram"></i>
-        </footer>
-    </div>
+    <footer class="footer">
+        <div class="footer__container">
+            <i class="fab fa-facebook-f icon"></i>
+            <i class="fab fa-twitter icon"></i>
+            <i class="fab fa-instagram icon"></i>
+        </div>
+    </footer>
 
     <script src="../public/js/main.js"></script>
 </body>
